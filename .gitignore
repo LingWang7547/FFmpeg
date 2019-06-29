@@ -30,3 +30,13 @@
 *.exe
 *.out
 *.app
+
+# Video
+*.ts
+*.h264
+*.mov
+*.yuv
+Debug
+Release
+x64
+.vs
