@@ -13,3 +13,5 @@ int Get_sev_code_num(UINT8 *buf, UINT32 &bytePosition, UINT8 &bitPosition);
 // Parse bit stream as unsigned int bits
 int Get_uint_code_num(UINT8 *buf, UINT32 &bytePosition, UINT8 &bitPosition, UINT8 length);
 
+// Parse bit stream as me(coded_block_pattern)
+int Get_me_code_num(UINT8 *buf, UINT32 &bytePosition, UINT8 &bitPosition, UINT8 mode);

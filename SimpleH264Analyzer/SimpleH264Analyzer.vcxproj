@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClInclude Include="Configuration.h" />
     <ClInclude Include="Global.h" />
+    <ClInclude Include="MacroBlock.h" />
     <ClInclude Include="NALUnit.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="PicParamSet.h" />
@@ -164,6 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Configuration.cpp" />
+    <ClCompile Include="MacroBlock.cpp" />
     <ClCompile Include="PicParamSet.cpp" />
     <ClCompile Include="NALUnit.cpp" />
     <ClCompile Include="pch.cpp">

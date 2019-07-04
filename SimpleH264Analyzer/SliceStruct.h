@@ -2,6 +2,8 @@
 class CSeqParamSet;
 class CPicParamSet;
 class CSliceHeader;
+class CMacroBlock;
+
 
 class CSliceStruct
 {
@@ -10,6 +12,7 @@ public:
 	~CSliceStruct();
 
 	int Parse();
+	//CMacroblock *Get_macroblock_at_index(int mbIdx);
 
 	CSliceHeader *sliceHeader;
 	CSeqParamSet *sps_active;
@@ -20,5 +23,7 @@ private:
 	UINT8   nalType;
 	UINT32  sliceIdx;
 
+	UINT16 max_mb_number;
+	CMacroBlock **macroblocks;
 };
 

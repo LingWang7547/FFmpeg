@@ -56,6 +56,30 @@ output_of_prior_pics_flag: 0
 long_term_reference_flag: 0
 Slice QP Delta: -13
 -------------------------------------------
+***** MacroBlock: 0 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+prev_intra4x4_pred_mode_flag: 1
+intra_chroma_pred_mode: 0
+coded_block_pattern: 47
+mb_qp_delta: 0
+NAL Uint Type: 1
 NAL Uint Type: 1
 NAL Uint Type: 1
 NAL Uint Type: 1

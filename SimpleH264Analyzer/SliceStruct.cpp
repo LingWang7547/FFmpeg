@@ -3,6 +3,7 @@
 #include "PicParamSet.h"
 #include "SliceStruct.h"
 #include "SliceHeader.h"
+#include "Macroblock.h"
 
 #include <iostream>
 using namespace std;
@@ -18,14 +19,31 @@ CSliceStruct::CSliceStruct(UINT8 *pSODB, CSeqParamSet *sps, CPicParamSet *pps, U
 	sliceHeader = NULL;
 	this->sliceIdx = sliceIdx;
 
+	max_mb_number = sps_active->Get_pic_width_in_mbs() * sps_active->Get_pic_height_in_mbs();
+	macroblocks = new CMacroBlock *[max_mb_number];
+	memset(macroblocks, NULL, max_mb_number * sizeof(CMacroBlock *));
 }
 
 CSliceStruct::~CSliceStruct()
 {
-	if (sliceHeader)
+	if (sliceHeader != NULL)
 	{
 		delete sliceHeader;
 		sliceHeader = NULL;
+	}
+	if (macroblocks)
+	{
+		for (int idx = 0; idx < max_mb_number; idx++)
+		{
+			if (macroblocks[idx])
+			{
+				delete macroblocks[idx];
+				macroblocks[idx] = NULL;
+			}
+		}
+
+		delete macroblocks;
+		macroblocks = NULL;
 	}
 }
 
@@ -40,8 +58,16 @@ int CSliceStruct::Parse()
 	{
 		return -1;
 	}
+	for (int idx = 0; idx < max_mb_number; idx++)
+	{
+		macroblocks[idx] = new CMacroBlock(pSODB, macroblockOffset, idx);
 
+		macroblocks[idx]->Set_pic_param_set(pps_active);
 
+		macroblockOffset += macroblocks[idx]->Parse_macroblock();
+		//macroblocks[idx]->Decode_macroblock();
+		break;
+	}
 	return -1;
 }
 

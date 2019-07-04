@@ -19,6 +19,9 @@
     <Filter Include="4.Slice">
       <UniqueIdentifier>{88cfe39b-7cbf-427b-b9bb-89af1f350b34}</UniqueIdentifier>
     </Filter>
+    <Filter Include="5.MacroBlock">
+      <UniqueIdentifier>{b54d0186-7b94-4360-98f0-b4437efd4d11}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Stream.h">
@@ -51,6 +54,9 @@
     <ClInclude Include="SliceHeader.h">
       <Filter>4.Slice</Filter>
     </ClInclude>
+    <ClInclude Include="MacroBlock.h">
+      <Filter>5.MacroBlock</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SimpleH264Analyzer.cpp">
@@ -82,6 +88,9 @@
     </ClCompile>
     <ClCompile Include="SliceHeader.cpp">
       <Filter>4.Slice</Filter>
+    </ClCompile>
+    <ClCompile Include="MacroBlock.cpp">
+      <Filter>5.MacroBlock</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

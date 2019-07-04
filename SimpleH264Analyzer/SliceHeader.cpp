@@ -2,6 +2,7 @@
 #include "SliceHeader.h"
 #include "SeqParamSet.h"
 #include "PicParamSet.h"
+#include "MacroBlock.h"
 
 using namespace std;
 
