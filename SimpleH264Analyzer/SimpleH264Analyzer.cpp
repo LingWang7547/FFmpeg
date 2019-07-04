@@ -4,8 +4,9 @@
 #include "pch.h"
 #include <iostream>
 #include "Stream.h"
+
 int main(int argc, char* argv[])
-{
+{	
 	CStreamFile h264Stream(argv[1]);
 
 	h264Stream.Parse_h264_bitstream();

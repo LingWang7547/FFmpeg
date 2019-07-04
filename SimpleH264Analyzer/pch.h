@@ -10,7 +10,10 @@
 #define PCH_H
 
 // TODO: 添加要在此处预编译的标头
+#include <string>
 #include "Global.h"
-
+#include "Configuration.h"
+#include <assert.h>
+#include "Utils.h"
 
 #endif //PCH_H

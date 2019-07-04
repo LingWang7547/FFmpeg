@@ -1,11 +1,13 @@
 #include "pch.h"
 #include "Stream.h"
 #include "NALUnit.h"
+#include "SeqParamSet.h"
 
 //构造函数
 CStreamFile::CStreamFile(char * fileName)
 {
 	this->fileName = fileName;
+	this->sps = NULL;
 	this->file_info();
 
 	this->inputFile = fopen(fileName, "rb");
@@ -13,7 +15,13 @@ CStreamFile::CStreamFile(char * fileName)
 	{
 		file_error(0);
 	}
-	
+#if TRACE_CONFIG_LOGOUT
+	g_traceFile.open("trace.txt");
+	if (!g_traceFile)
+	{
+		file_error(1);
+	}
+#endif
 }
 
 //析构函数
@@ -24,12 +32,24 @@ CStreamFile::~CStreamFile()
 		fclose(inputFile);
 		inputFile = NULL;
 	}
+	if (sps != NULL)
+	{
+		delete sps;
+		sps = NULL;
+	}
+#if TRACE_CONFIG_LOGOUT
+	if (g_traceFile.is_open())
+	{
+		g_traceFile.close();
+	}
+#endif // TRACE_CONFIG_LOGOUT
+
 }
 
 int CStreamFile::Parse_h264_bitstream()
 {
 	int ret = 0;
-	uint8 nalType = 0;
+	UINT8 nalType = 0;
 	do
 	{
 		ret = find_nal_prefix();
@@ -38,9 +58,24 @@ int CStreamFile::Parse_h264_bitstream()
 		if (nalVec.size())
 		{
 			nalType = nalVec[0] & 0x1F; //取第一个字节的后五位
-			std::wcout << "NAL Unit Type: " << nalType << std::endl;
+			dump_NAL_type(nalType);
 			ebsp_to_sodb();
-			CNALUnit nalUnit(&nalVec[1], nalVec.size() - 1);
+			CNALUnit nalUnit(&nalVec[1], nalVec.size() - 1, nalType);
+			switch (nalType)
+			{
+			case 7:
+				// Parse SPS NAL Unit
+				if (sps)
+				{
+					delete sps;
+				}
+				sps = new CSeqParamSet;
+				nalUnit.Parse_as_seq_param_set(sps);
+				sps->Dump_sps_info();
+				break;
+			default:
+				break;
+			}
 		}
 		
 		//
@@ -52,7 +87,7 @@ void CStreamFile::file_info()
 {
 	if (this->fileName)
 	{
-		std::cout << "File name: " << fileName << std::endl;
+		std::wcout << "File name: " << fileName << std::endl;
 	}
 }
 
@@ -61,7 +96,10 @@ void CStreamFile::file_error(int idx)
 	switch (idx)
 	{
 	case 0:
-		std::cout << "Error: opening input file failed" << std::endl;
+		std::wcout << "Error: opening input file failed" << std::endl;
+		break;
+	case 1:
+		std::wcout << "Error: opening trace file failed" << std::endl;
 		break;
 	default:
 		break;
@@ -71,8 +109,8 @@ void CStreamFile::file_error(int idx)
 int CStreamFile::find_nal_prefix()
 {
 	// 00 00 00 01 x x x x x 00 00 00 01
-	uint8 prefix[3] = { 0 };
-	uint8 fileByte;
+	UINT8 prefix[3] = { 0 };
+	UINT8 fileByte;
 	/*
 	依次比较 [0][1][2] = {0 0 0};  若不是，将下一个字符放到[0]的位置 -> [1][2][0] = {0 0 0} ; 下次放到[1]的位置，以此类推
 	找到三个连0之后，还需判断下一个字符是否为1， getc() = 1  -> 00 00 00 01
@@ -131,11 +169,11 @@ void CStreamFile::ebsp_to_sodb()
 	{
 		return;
 	}
-	for (std::vector<uint8>::iterator it = nalVec.begin() + 2; it != nalVec.end();)
+	for (std::vector<UINT8>::iterator it = nalVec.begin() + 2; it != nalVec.end();)
 	{
 		if (*it == 3 && *(it - 1) == 0 && *(it - 2) == 0)
 		{
-			std::vector<uint8>::iterator tmp = nalVec.erase(it);
+			std::vector<UINT8>::iterator tmp = nalVec.erase(it);
 			it = tmp;
 		}
 		else
@@ -143,4 +181,16 @@ void CStreamFile::ebsp_to_sodb()
 			it++;
 		}
 	}
+}
+
+void CStreamFile::dump_NAL_type(UINT8 nalType)
+{
+#if TRACE_CONFIG_CONSOLE
+	std::wcout << "NAL Unit Type: " << nalType << std::endl;
+#endif // TRACE_CONFIG_CONSOLE
+
+#if TRACE_CONFIG_LOGOUT
+	g_traceFile << "NAL Uint Type: " << std::to_string(nalType) << std::endl;
+#endif // TRACE_CONFIG_LOGOUT
+
 }

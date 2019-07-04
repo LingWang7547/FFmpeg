@@ -2,6 +2,9 @@
 
 #include <iostream>
 #include <vector>
+
+class CSeqParamSet;
+
 class CStreamFile
 {
 public:
@@ -14,10 +17,14 @@ public:
 private:
 	FILE* inputFile;
 	char* fileName;
-	std::vector<uint8> nalVec;
+	std::vector<UINT8> nalVec;
 
 	void file_info();
 	void file_error(int idx);
 	int find_nal_prefix();
 	void ebsp_to_sodb();
+
+	void dump_NAL_type(UINT8 nalType);
+
+	CSeqParamSet *sps;
 };
