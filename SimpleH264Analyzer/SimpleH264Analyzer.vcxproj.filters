@@ -16,6 +16,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="4.Slice">
+      <UniqueIdentifier>{88cfe39b-7cbf-427b-b9bb-89af1f350b34}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Stream.h">
@@ -42,6 +45,12 @@
     <ClInclude Include="PicParamSet.h">
       <Filter>1.Application</Filter>
     </ClInclude>
+    <ClInclude Include="SliceStruct.h">
+      <Filter>4.Slice</Filter>
+    </ClInclude>
+    <ClInclude Include="SliceHeader.h">
+      <Filter>4.Slice</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SimpleH264Analyzer.cpp">
@@ -67,6 +76,12 @@
     </ClCompile>
     <ClCompile Include="PicParamSet.cpp">
       <Filter>2.Stream</Filter>
+    </ClCompile>
+    <ClCompile Include="SliceStruct.cpp">
+      <Filter>4.Slice</Filter>
+    </ClCompile>
+    <ClCompile Include="SliceHeader.cpp">
+      <Filter>4.Slice</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

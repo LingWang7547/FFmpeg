@@ -6,6 +6,6 @@
 
 #define TRACE_CONFIG_SEQ_PARAM_SET 1
 #define TRACE_CONFIG_PIC_PARAM_SET 1
-
+#define TRACE_CONFIG_SLICE_HEADER 1
 
 extern std::ofstream g_traceFile;

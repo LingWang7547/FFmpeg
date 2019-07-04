@@ -196,3 +196,8 @@ int CNALUnit::Parse_as_pic_param_set(CPicParamSet * pps)
 
 	return 0;
 }
+
+UINT8* CNALUnit::Get_SODB()
+{
+	return pSODB;
+}

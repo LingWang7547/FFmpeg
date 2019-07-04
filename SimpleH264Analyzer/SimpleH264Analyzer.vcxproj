@@ -157,6 +157,8 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="PicParamSet.h" />
     <ClInclude Include="SeqParamSet.h" />
+    <ClInclude Include="SliceHeader.h" />
+    <ClInclude Include="SliceStruct.h" />
     <ClInclude Include="Stream.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>
@@ -172,6 +174,8 @@
     </ClCompile>
     <ClCompile Include="SeqParamSet.cpp" />
     <ClCompile Include="SimpleH264Analyzer.cpp" />
+    <ClCompile Include="SliceHeader.cpp" />
+    <ClCompile Include="SliceStruct.cpp" />
     <ClCompile Include="Stream.cpp" />
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>

@@ -3,6 +3,7 @@
 #include "NALUnit.h"
 #include "SeqParamSet.h"
 #include "PicParamSet.h"
+#include "SliceStruct.h"
 
 //构造函数
 CStreamFile::CStreamFile(char * fileName)
@@ -10,6 +11,8 @@ CStreamFile::CStreamFile(char * fileName)
 	this->fileName = fileName;
 	this->sps = NULL;
 	this->pps = NULL;
+	this->IDRSlice = NULL;
+
 	this->file_info();
 
 	this->inputFile = fopen(fileName, "rb");
@@ -44,6 +47,11 @@ CStreamFile::~CStreamFile()
 		delete pps;
 		pps = NULL;
 	}
+	if (IDRSlice != NULL)
+	{
+		delete IDRSlice;
+		IDRSlice = NULL;
+	}
 #if TRACE_CONFIG_LOGOUT
 	if (g_traceFile.is_open())
 	{
@@ -57,6 +65,7 @@ int CStreamFile::Parse_h264_bitstream()
 {
 	int ret = 0;
 	UINT8 nalType = 0;
+	UINT32 sliceIdx = 0;
 	do
 	{
 		ret = find_nal_prefix();
@@ -67,14 +76,26 @@ int CStreamFile::Parse_h264_bitstream()
 			nalType = nalVec[0] & 0x1F; //取第一个字节的后五位
 			dump_NAL_type(nalType);
 			ebsp_to_sodb();
+
 			CNALUnit nalUnit(&nalVec[1], nalVec.size() - 1, nalType);
 			switch (nalType)
 			{
+			case 5:
+				// Parse IDR NAL Unit
+				if (IDRSlice)
+				{
+					delete IDRSlice;
+					IDRSlice = NULL;
+				}
+				IDRSlice = new CSliceStruct(nalUnit.Get_SODB(), sps, pps, nalType, sliceIdx++);
+				IDRSlice->Parse();
+				break;
 			case 7:
 				// Parse SPS NAL Unit
 				if (sps)
 				{
 					delete sps;
+					sps = NULL;
 				}
 				sps = new CSeqParamSet;
 				nalUnit.Parse_as_seq_param_set(sps);
@@ -85,6 +106,7 @@ int CStreamFile::Parse_h264_bitstream()
 				if (pps)
 				{
 					delete pps;
+					pps = NULL;
 				}
 				pps = new CPicParamSet;
 				nalUnit.Parse_as_pic_param_set(pps);
@@ -186,16 +208,17 @@ void CStreamFile::ebsp_to_sodb()
 	{
 		return;
 	}
-	for (std::vector<UINT8>::iterator it = nalVec.begin() + 2; it != nalVec.end();)
+
+	for (std::vector<UINT8>::iterator itor = nalVec.begin() + 2; itor != nalVec.end(); )
 	{
-		if (*it == 3 && *(it - 1) == 0 && *(it - 2) == 0)
+		if ((3 == *itor) && (0 == *(itor - 1)) && (0 == *(itor - 2)))
 		{
-			std::vector<UINT8>::iterator tmp = nalVec.erase(it);
-			it = tmp;
+			std::vector<UINT8>::iterator temp = nalVec.erase(itor);
+			itor = temp;
 		}
 		else
 		{
-			it++;
+			itor++;
 		}
 	}
 }
