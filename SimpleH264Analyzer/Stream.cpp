@@ -2,12 +2,14 @@
 #include "Stream.h"
 #include "NALUnit.h"
 #include "SeqParamSet.h"
+#include "PicParamSet.h"
 
 //¹¹Ôìº¯Êý
 CStreamFile::CStreamFile(char * fileName)
 {
 	this->fileName = fileName;
 	this->sps = NULL;
+	this->pps = NULL;
 	this->file_info();
 
 	this->inputFile = fopen(fileName, "rb");
@@ -36,6 +38,11 @@ CStreamFile::~CStreamFile()
 	{
 		delete sps;
 		sps = NULL;
+	}
+	if (pps != NULL)
+	{
+		delete pps;
+		pps = NULL;
 	}
 #if TRACE_CONFIG_LOGOUT
 	if (g_traceFile.is_open())
@@ -72,6 +79,16 @@ int CStreamFile::Parse_h264_bitstream()
 				sps = new CSeqParamSet;
 				nalUnit.Parse_as_seq_param_set(sps);
 				sps->Dump_sps_info();
+				break;
+			case 8:
+				// Parse PPS NAL Unit
+				if (pps)
+				{
+					delete pps;
+				}
+				pps = new CPicParamSet;
+				nalUnit.Parse_as_pic_param_set(pps);
+				pps->Dump_pps_info();
 				break;
 			default:
 				break;

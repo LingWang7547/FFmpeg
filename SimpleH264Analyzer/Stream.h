@@ -4,6 +4,7 @@
 #include <vector>
 
 class CSeqParamSet;
+class CPicParamSet;
 
 class CStreamFile
 {
@@ -27,4 +28,5 @@ private:
 	void dump_NAL_type(UINT8 nalType);
 
 	CSeqParamSet *sps;
+	CPicParamSet *pps;
 };

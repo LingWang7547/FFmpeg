@@ -1,6 +1,7 @@
 #pragma once
 
 class CSeqParamSet;
+class CPicParamSet;
 
 class CNALUnit
 {
@@ -10,6 +11,8 @@ public:
 
 	//sps
 	int Parse_as_seq_param_set(CSeqParamSet* sps);
+	//pps
+	int Parse_as_pic_param_set(CPicParamSet* pps);
 
 
 private:

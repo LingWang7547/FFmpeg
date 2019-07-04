@@ -155,12 +155,14 @@
     <ClInclude Include="Global.h" />
     <ClInclude Include="NALUnit.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="PicParamSet.h" />
     <ClInclude Include="SeqParamSet.h" />
     <ClInclude Include="Stream.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Configuration.cpp" />
+    <ClCompile Include="PicParamSet.cpp" />
     <ClCompile Include="NALUnit.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
