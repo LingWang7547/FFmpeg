@@ -3,72 +3,83 @@
 #include "PicParamSet.h"
 #include "SliceStruct.h"
 #include "SliceHeader.h"
-#include "Macroblock.h"
+#include "MacroBlock.h"
 
 #include <iostream>
 using namespace std;
 
-CSliceStruct::CSliceStruct(UINT8 *pSODB, CSeqParamSet *sps, CPicParamSet *pps, UINT8	nalType, UINT32 sliceIdx)
+CSliceStruct::CSliceStruct(UINT8 *pSODB, CSeqParamSet *sps, CPicParamSet *pps, UINT8 nalType, UINT32 sliceIdx)
 {
 
-	this->pSODB = pSODB;
-	sps_active = sps;
-	pps_active = pps;
-	this->nalType = nalType;
+	m_pSODB = pSODB;
+	m_sps_active = sps;
+	m_pps_active = pps;
+	m_nalType = nalType;
 
-	sliceHeader = NULL;
-	this->sliceIdx = sliceIdx;
+	m_sliceHeader = NULL;
+	m_sliceIdx = sliceIdx;
 
-	max_mb_number = sps_active->Get_pic_width_in_mbs() * sps_active->Get_pic_height_in_mbs();
-	macroblocks = new CMacroBlock *[max_mb_number];
-	memset(macroblocks, NULL, max_mb_number * sizeof(CMacroBlock *));
+	m_max_mb_number = m_sps_active->Get_pic_width_in_mbs() * m_sps_active->Get_pic_height_in_mbs();
+	m_macroblocks = new CMacroBlock *[m_max_mb_number];
+	memset(m_macroblocks, NULL, m_max_mb_number * sizeof(CMacroBlock *));
 }
 
 CSliceStruct::~CSliceStruct()
 {
-	if (sliceHeader != NULL)
+	if (m_sliceHeader)
 	{
-		delete sliceHeader;
-		sliceHeader = NULL;
+		delete m_sliceHeader;
+		m_sliceHeader = NULL;
 	}
-	if (macroblocks)
+
+	if (m_macroblocks)
 	{
-		for (int idx = 0; idx < max_mb_number; idx++)
+		for (int idx = 0; idx < m_max_mb_number; idx++)
 		{
-			if (macroblocks[idx])
+			if (m_macroblocks[idx])
 			{
-				delete macroblocks[idx];
-				macroblocks[idx] = NULL;
+				delete m_macroblocks[idx];
+				m_macroblocks[idx] = NULL;
 			}
 		}
 
-		delete macroblocks;
-		macroblocks = NULL;
+		delete m_macroblocks;
+		m_macroblocks = NULL;
 	}
 }
 
 int CSliceStruct::Parse()
 {
 	UINT32 sliceHeaderLength = 0, macroblockOffset = 0;
-	sliceHeader = new CSliceHeader(pSODB, sps_active, pps_active, nalType);
-	macroblockOffset = sliceHeaderLength = sliceHeader->Parse_slice_header();
-	sliceHeader->Dump_slice_header_info();
+	m_sliceHeader = new CSliceHeader(m_pSODB, m_sps_active, m_pps_active, m_nalType);
+	macroblockOffset = sliceHeaderLength = m_sliceHeader->Parse_slice_header();
+	m_sliceHeader->Dump_slice_header_info();
 
-	if (sliceIdx != 0)
+	if (m_sliceIdx != 0)
 	{
-		return -1;
+		return kPARSING_ERROR_NO_ERROR;
 	}
-	for (int idx = 0; idx < max_mb_number; idx++)
+
+	for (int idx = 0; idx < m_max_mb_number; idx++)
 	{
-		macroblocks[idx] = new CMacroBlock(pSODB, macroblockOffset, idx);
+		m_macroblocks[idx] = new CMacroBlock(m_pSODB, macroblockOffset, idx);
 
-		macroblocks[idx]->Set_pic_param_set(pps_active);
-		macroblocks[idx]->Set_slice_struct(this);
+		m_macroblocks[idx]->Set_paramaters(m_pps_active);
+		m_macroblocks[idx]->Set_slice_struct(this);
 
-		macroblockOffset += macroblocks[idx]->Parse_macroblock();
-		//macroblocks[idx]->Decode_macroblock();
-		break;
+		macroblockOffset += m_macroblocks[idx]->Parse_macroblock();
+		m_macroblocks[idx]->Decode_macroblock();
 	}
-	return -1;
+
+	for (int idx = 0; idx < m_max_mb_number; idx++)
+	{
+		m_macroblocks[idx]->Deblock_macroblock();
+	}
+
+	return kPARSING_ERROR_NO_ERROR;
 }
 
+CMacroBlock * CSliceStruct::Get_macroblock_at_index(int mbIdx)
+{
+	return m_macroblocks[mbIdx];
+}

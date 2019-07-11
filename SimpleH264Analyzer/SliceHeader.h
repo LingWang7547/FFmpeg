@@ -1,4 +1,5 @@
 #pragma once
+
 class CSeqParamSet;
 class CPicParamSet;
 
@@ -29,25 +30,25 @@ public:
 	UINT8 Get_slice_type();
 	int  Get_slice_qp_delta();
 
-	int	   disable_deblocking_filter_idc;
-	int    slice_alpha_c0_offset;
-	int    slice_beta_offset;
+	int	   m_disable_deblocking_filter_idc;
+	int    m_slice_alpha_c0_offset;
+	int    m_slice_beta_offset;
 private:
-	CSeqParamSet *sps_active;
-	CPicParamSet *pps_active;
-	UINT8	*pSODB;
-	UINT8   nalType;
+	CSeqParamSet *m_sps_active;
+	CPicParamSet *m_pps_active;
+	UINT8	*m_pSODB;
+	UINT8   m_nalType;
 
-	UINT16 first_mb_in_slice;
-	UINT8  slice_type;
-	UINT8  pps_id;
-	UINT8  colour_plane_id;
-	UINT32 frame_num;
-	bool   field_pic_flag;
-	bool   bottom_field_flag;
-	UINT16 idr_pic_id;
-	UINT32 poc;
-	int	   delta_poc_bottom;
-	DecRefPicMarking dec_ref_pic_marking;
-	int	   slice_qp_delta;
+	UINT16 m_first_mb_in_slice;
+	UINT8  m_slice_type;
+	UINT8  m_pps_id;
+	UINT8  m_colour_plane_id;
+	UINT32 m_frame_num;
+	bool   m_field_pic_flag;
+	bool   m_bottom_field_flag;
+	UINT16 m_idr_pic_id;
+	UINT32 m_poc;
+	int	   m_delta_poc_bottom;
+	DecRefPicMarking m_dec_ref_pic_marking;
+	int	   m_slice_qp_delta;
 };
