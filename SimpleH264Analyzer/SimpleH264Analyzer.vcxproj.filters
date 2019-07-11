@@ -51,9 +51,6 @@
     <ClInclude Include="Utils.h">
       <Filter>0.Global</Filter>
     </ClInclude>
-    <ClInclude Include="PicParamSet.h">
-      <Filter>1.Application</Filter>
-    </ClInclude>
     <ClInclude Include="SliceStruct.h">
       <Filter>4.Slice</Filter>
     </ClInclude>
@@ -63,14 +60,20 @@
     <ClInclude Include="MacroBlock.h">
       <Filter>5.MacroBlock</Filter>
     </ClInclude>
-    <ClInclude Include="Residual.h">
-      <Filter>1.Application</Filter>
-    </ClInclude>
     <ClInclude Include="MacroBlock_Defines.h">
       <Filter>5.MacroBlock</Filter>
     </ClInclude>
     <ClInclude Include="CAVLC_Defines.h">
       <Filter>7.CAVLC</Filter>
+    </ClInclude>
+    <ClInclude Include="Residual.h">
+      <Filter>6.Residual</Filter>
+    </ClInclude>
+    <ClInclude Include="PicParamSet.h">
+      <Filter>2.Stream</Filter>
+    </ClInclude>
+    <ClInclude Include="ErrorInfo.h">
+      <Filter>1.Application</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -108,7 +111,7 @@
       <Filter>5.MacroBlock</Filter>
     </ClCompile>
     <ClCompile Include="Residual.cpp">
-      <Filter>2.Stream</Filter>
+      <Filter>6.Residual</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

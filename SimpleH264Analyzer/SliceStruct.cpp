@@ -60,8 +60,10 @@ int CSliceStruct::Parse()
 		return kPARSING_ERROR_NO_ERROR;
 	}
 
+	std::cout << "mb_number" << m_max_mb_number << std::endl;
 	for (int idx = 0; idx < m_max_mb_number; idx++)
 	{
+		std::cout << "mb_number" << idx << std::endl;
 		m_macroblocks[idx] = new CMacroBlock(m_pSODB, macroblockOffset, idx);
 
 		m_macroblocks[idx]->Set_paramaters(m_pps_active);

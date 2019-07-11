@@ -1,11 +1,11 @@
-NAL Uint Type: 7
+NAL Unit Type: 7
 ==========Sequence Paramater Set==========
 Profile: 100
 Level: 30
 SPS ID: 0
 chroma_format_idc: 1
-bit_depth_luma: 0
-bit_depth_chroma: 0
+bit_depth_luma: 8
+bit_depth_chroma: 8
 qpprime_y_zero_transform_bypass_flag: 0
 seq_scaling_matrix_present_flag: 0
 log2_max_frame_num: 4
@@ -25,7 +25,7 @@ frame_crop_top_offset: 0
 frame_crop_bottum_offset: 4
 vui_parameters_present_flag: 1
 ==========================================
-NAL Uint Type: 8
+NAL Unit Type: 8
 ==========Picture Paramater Set==========
 pic_parameter_set_id: 0
 seq_parameter_set_id: 0
@@ -35,19 +35,19 @@ num_slice_groups: 1
 num_ref_idx_l0_default_active: 3
 num_ref_idx_l1_default_active: 1
 weighted_pred_flag: 1
-weighted_bipred_idc: 0
-pic_init_qp: 0
-pic_init_qs: 0
-chroma_qp_index_offset :0
+weighted_bipred_idc: 2
+pic_init_qp: 23
+pic_init_qs: 26
+chroma_qp_index_offset :-2
 deblocking_filter_control_present_flag: 1
 constrained_intra_pred_flag: 0
 redundant_pic_cnt_present_flag: 0
 ==========================================
-NAL Uint Type: 6
-NAL Uint Type: 5
+NAL Unit Type: 6
+NAL Unit Type: 5
 --------------- Slice Header ----------------
 First MB In Slice: 0
-Slice Type: 7
+Slice Type: 2
 Picture Parameter Set ID: 0
 Frame Num: 0
 IDR Picture Flag: 0
@@ -56,7 +56,7 @@ output_of_prior_pics_flag: 0
 long_term_reference_flag: 0
 Slice QP Delta: -13
 -------------------------------------------
-***** MacroBlock: 0 *****
+***** MB: 0 *****
 mb_type: 0
 prev_intra4x4_pred_mode_flag: 1
 prev_intra4x4_pred_mode_flag: 1
@@ -79,8 +79,2312 @@ prev_intra4x4_pred_mode_flag: 1
 intra_chroma_pred_mode: 0
 coded_block_pattern: 47
 mb_qp_delta: 0
-NAL Uint Type: 1
-NAL Uint Type: 1
-NAL Uint Type: 1
-NAL Uint Type: 1
-NAL Uint Type: 1
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 3	trailingOnes: 0
+	levels: 2 -1 -1 
+ChromaDC[1]: numCoeff: 4	trailingOnes: 0
+	levels: 2 -3 -2 3 
+Chroma Residual AC:
+ChromaAC[0][0][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][0][1]: numCoeff: 4	trailingOnes: 3
+	trailingSign: 1 1 -1 
+	levels: 1 
+ChromaAC[0][1][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[0][1][1]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][0][0]: numCoeff: 2	trailingOnes: 1
+	trailingSign: 1 
+	levels: 2 
+ChromaAC[1][0][1]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][1][0]: numCoeff: 2	trailingOnes: 2
+	trailingSign: -1 -1 
+ChromaAC[1][1][1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+***** MB: 1 *****
+mb_type: 1
+intra_chroma_pred_mode: 2
+mb_qp_delta: 3
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 2	trailingOnes: 2
+	trailingSign: -1 -1 
+***** MB: 2 *****
+mb_type: 2
+intra_chroma_pred_mode: 0
+mb_qp_delta: 0
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 0	trailingOnes: 0
+***** MB: 3 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 5
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 1
+intra_chroma_pred_mode: 2
+coded_block_pattern: 47
+mb_qp_delta: 253
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 4	trailingOnes: 3
+	trailingSign: 1 1 1 
+	levels: -1008 
+ChromaDC[1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+Chroma Residual AC:
+ChromaAC[0][0][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][0][1]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][1][0]: numCoeff: 2	trailingOnes: 2
+	trailingSign: -1 1 
+ChromaAC[0][1][1]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][0][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][0][1]: numCoeff: 3	trailingOnes: 2
+	trailingSign: -1 -1 
+	levels: 2 
+ChromaAC[1][1][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaAC[1][1][1]: numCoeff: 2	trailingOnes: 2
+	trailingSign: 1 1 
+***** MB: 4 *****
+mb_type: 2
+intra_chroma_pred_mode: 0
+mb_qp_delta: 0
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 0	trailingOnes: 0
+***** MB: 5 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 5
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+intra_chroma_pred_mode: 0
+coded_block_pattern: 47
+mb_qp_delta: 0
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaDC[1]: numCoeff: 2	trailingOnes: 0
+	levels: -2 -1 
+Chroma Residual AC:
+ChromaAC[0][0][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][0][1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaAC[0][1][0]: numCoeff: 2	trailingOnes: 2
+	trailingSign: -1 1 
+ChromaAC[0][1][1]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][0][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[1][0][1]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][1][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[1][1][1]: numCoeff: 0	trailingOnes: 0
+***** MB: 6 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+prev_intra4x4_pred_mode_flag: 1
+intra_chroma_pred_mode: 0
+coded_block_pattern: 31
+mb_qp_delta: 1
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaDC[1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+***** MB: 7 *****
+mb_type: 20
+intra_chroma_pred_mode: 0
+mb_qp_delta: 0
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 0	trailingOnes: 0
+Luma Residual 16x16 AC:
+Luma16x16AC[0][0]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[0][1]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[1][0]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[1][1]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[0][2]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[0][3]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[1][2]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[1][3]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[2][0]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[2][1]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[3][0]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[3][1]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[2][2]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[2][3]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[3][2]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaDC[1]: numCoeff: 0	trailingOnes: 0
+***** MB: 8 *****
+mb_type: 2
+intra_chroma_pred_mode: 0
+mb_qp_delta: 0
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 0	trailingOnes: 0
+***** MB: 9 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 5
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+intra_chroma_pred_mode: 0
+coded_block_pattern: 47
+mb_qp_delta: 0
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaDC[1]: numCoeff: 0	trailingOnes: 0
+Chroma Residual AC:
+ChromaAC[0][0][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][0][1]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][1][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaAC[0][1][1]: numCoeff: 2	trailingOnes: 2
+	trailingSign: 1 -1 
+ChromaAC[1][0][0]: numCoeff: 2	trailingOnes: 2
+	trailingSign: -1 1 
+ChromaAC[1][0][1]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][1][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][1][1]: numCoeff: 2	trailingOnes: 2
+	trailingSign: -1 -1 
+***** MB: 10 *****
+mb_type: 1
+intra_chroma_pred_mode: 0
+mb_qp_delta: 1
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+***** MB: 11 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 5
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+intra_chroma_pred_mode: 0
+coded_block_pattern: 23
+mb_qp_delta: 0
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaDC[1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+***** MB: 12 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+intra_chroma_pred_mode: 6
+coded_block_pattern: 47
+mb_qp_delta: 1
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaDC[1]: numCoeff: 2	trailingOnes: 2
+	trailingSign: 1 1 
+Chroma Residual AC:
+ChromaAC[0][0][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][0][1]: numCoeff: 4	trailingOnes: 3
+	trailingSign: 1 -1 -1 
+	levels: 3 
+ChromaAC[0][1][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][1][1]: numCoeff: 2	trailingOnes: 2
+	trailingSign: 1 -1 
+ChromaAC[1][0][0]: numCoeff: 2	trailingOnes: 1
+	trailingSign: -1 
+	levels: -2 
+ChromaAC[1][0][1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[1][1][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaAC[1][1][1]: numCoeff: 0	trailingOnes: 0
+***** MB: 13 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 5
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 5
+prev_intra4x4_pred_mode_flag: 1
+intra_chroma_pred_mode: 0
+coded_block_pattern: 31
+mb_qp_delta: 14
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaDC[1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+***** MB: 14 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 5
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 5
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 1
+intra_chroma_pred_mode: 0
+coded_block_pattern: 47
+mb_qp_delta: 0
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 3	trailingOnes: 3
+	trailingSign: -1 -1 1 
+ChromaDC[1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+Chroma Residual AC:
+ChromaAC[0][0][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][0][1]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][1][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaAC[0][1][1]: numCoeff: 1	trailingOnes: 0
+	levels: 2 
+ChromaAC[1][0][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[1][0][1]: numCoeff: 3	trailingOnes: 2
+	trailingSign: 1 -1 
+	levels: -2 
+ChromaAC[1][1][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][1][1]: numCoeff: 3	trailingOnes: 1
+	trailingSign: -1 
+	levels: -2 -2 
+***** MB: 15 *****
+mb_type: 4
+intra_chroma_pred_mode: 11
+mb_qp_delta: 3
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 0	trailingOnes: 0
+***** MB: 16 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 5
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+intra_chroma_pred_mode: 0
+coded_block_pattern: 47
+mb_qp_delta: 3
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 2	trailingOnes: 2
+	trailingSign: 1 -1 
+ChromaDC[1]: numCoeff: 2	trailingOnes: 2
+	trailingSign: 1 1 
+Chroma Residual AC:
+ChromaAC[0][0][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaAC[0][0][1]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][1][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][1][1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[1][0][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][0][1]: numCoeff: 2	trailingOnes: 2
+	trailingSign: 1 -1 
+ChromaAC[1][1][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][1][1]: numCoeff: 4	trailingOnes: 2
+	trailingSign: -1 -1 
+	levels: 2 4 
+***** MB: 17 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 5
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 5
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 5
+prev_intra4x4_pred_mode_flag: 1
+intra_chroma_pred_mode: 0
+coded_block_pattern: 29
+mb_qp_delta: 0
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaDC[1]: numCoeff: 3	trailingOnes: 3
+	trailingSign: 1 1 -1 
+***** MB: 18 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+intra_chroma_pred_mode: 22
+coded_block_pattern: 47
+mb_qp_delta: 253
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaDC[1]: numCoeff: 2	trailingOnes: 2
+	trailingSign: 1 1 
+Chroma Residual AC:
+ChromaAC[0][0][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][0][1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaAC[0][1][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][1][1]: numCoeff: 2	trailingOnes: 2
+	trailingSign: -1 1 
+ChromaAC[1][0][0]: numCoeff: 4	trailingOnes: 1
+	trailingSign: -1 
+	levels: 2 1 1 
+ChromaAC[1][0][1]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][1][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaAC[1][1][1]: numCoeff: 2	trailingOnes: 2
+	trailingSign: -1 -1 
+***** MB: 19 *****
+mb_type: 4
+intra_chroma_pred_mode: 0
+mb_qp_delta: 1
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 0	trailingOnes: 0
+***** MB: 20 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 5
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 1
+intra_chroma_pred_mode: 0
+coded_block_pattern: 47
+mb_qp_delta: 1
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaDC[1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+Chroma Residual AC:
+ChromaAC[0][0][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][0][1]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][1][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[0][1][1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[1][0][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][0][1]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][1][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[1][1][1]: numCoeff: 0	trailingOnes: 0
+***** MB: 21 *****
+mb_type: 115
+intra_chroma_pred_mode: 6
+mb_qp_delta: 255
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 0	trailingOnes: 0
+Luma Residual 16x16 AC:
+Luma16x16AC[0][0]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[0][1]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[1][0]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[1][1]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[0][2]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[0][3]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[1][2]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[1][3]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[2][0]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[2][1]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[3][0]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[3][1]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[2][2]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[2][3]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[3][2]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaDC[1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+***** MB: 22 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+intra_chroma_pred_mode: 0
+coded_block_pattern: 47
+mb_qp_delta: 254
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaDC[1]: numCoeff: 3	trailingOnes: 0
+	levels: 2 -1 -2 
+Chroma Residual AC:
+ChromaAC[0][0][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][0][1]: numCoeff: 2	trailingOnes: 2
+	trailingSign: 1 -1 
+ChromaAC[0][1][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[0][1][1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[1][0][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][0][1]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][1][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaAC[1][1][1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+***** MB: 23 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+intra_chroma_pred_mode: 0
+coded_block_pattern: 47
+mb_qp_delta: 0
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 2	trailingOnes: 2
+	trailingSign: 1 -1 
+ChromaDC[1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+Chroma Residual AC:
+ChromaAC[0][0][0]: numCoeff: 2	trailingOnes: 1
+	trailingSign: 1 
+	levels: 2 
+ChromaAC[0][0][1]: numCoeff: 2	trailingOnes: 2
+	trailingSign: 1 1 
+ChromaAC[0][1][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[0][1][1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[1][0][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[1][0][1]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][1][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][1][1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+***** MB: 24 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 5
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 5
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+prev_intra4x4_pred_mode_flag: 1
+intra_chroma_pred_mode: 1
+coded_block_pattern: 47
+mb_qp_delta: 2
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 0	trailingOnes: 0
+ChromaDC[1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+Chroma Residual AC:
+ChromaAC[0][0][0]: numCoeff: 2	trailingOnes: 2
+	trailingSign: -1 -1 
+ChromaAC[0][0][1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaAC[0][1][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][1][1]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][0][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][0][1]: numCoeff: 3	trailingOnes: 3
+	trailingSign: -1 1 1 
+ChromaAC[1][1][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[1][1][1]: numCoeff: 2	trailingOnes: 2
+	trailingSign: 1 1 
+***** MB: 25 *****
+mb_type: 1
+intra_chroma_pred_mode: 1
+mb_qp_delta: 0
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 3	trailingOnes: 3
+	trailingSign: 1 -1 1 
+***** MB: 26 *****
+mb_type: 2
+intra_chroma_pred_mode: 1
+mb_qp_delta: 0
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 0	trailingOnes: 0
+***** MB: 27 *****
+mb_type: 1
+intra_chroma_pred_mode: 2
+mb_qp_delta: 0
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 0	trailingOnes: 0
+***** MB: 28 *****
+mb_type: 5
+intra_chroma_pred_mode: 6
+mb_qp_delta: 1
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaDC[1]: numCoeff: 0	trailingOnes: 0
+***** MB: 29 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 5
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+intra_chroma_pred_mode: 1
+coded_block_pattern: 47
+mb_qp_delta: 0
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 3	trailingOnes: 0
+	levels: -2 -2 -1 
+ChromaDC[1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+Chroma Residual AC:
+ChromaAC[0][0][0]: numCoeff: 2	trailingOnes: 2
+	trailingSign: -1 1 
+ChromaAC[0][0][1]: numCoeff: 4	trailingOnes: 3
+	trailingSign: -1 -1 1 
+	levels: -1 
+ChromaAC[0][1][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][1][1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaAC[1][0][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][0][1]: numCoeff: 2	trailingOnes: 2
+	trailingSign: -1 1 
+ChromaAC[1][1][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaAC[1][1][1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+***** MB: 30 *****
+mb_type: 8
+intra_chroma_pred_mode: 0
+mb_qp_delta: 1
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 2	trailingOnes: 2
+	trailingSign: -1 1 
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaDC[1]: numCoeff: 4	trailingOnes: 1
+	trailingSign: -1 
+	levels: 3 3 1 
+***** MB: 31 *****
+mb_type: 7
+intra_chroma_pred_mode: 0
+mb_qp_delta: 253
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 0	trailingOnes: 0
+ChromaDC[1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+***** MB: 32 *****
+mb_type: 97
+intra_chroma_pred_mode: 1
+mb_qp_delta: 0
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 0	trailingOnes: 0
+Luma Residual 16x16 AC:
+Luma16x16AC[0][0]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[0][1]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[1][0]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[1][1]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[0][2]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[0][3]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[1][2]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[1][3]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[2][0]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[2][1]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[3][0]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[3][1]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[2][2]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[2][3]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[3][2]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[3][3]: numCoeff: 0	trailingOnes: 0
+***** MB: 33 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 5
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 5
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 1
+intra_chroma_pred_mode: 11
+coded_block_pattern: 47
+mb_qp_delta: 0
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 0	trailingOnes: 0
+ChromaDC[1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+Chroma Residual AC:
+ChromaAC[0][0][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][0][1]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][1][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[0][1][1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaAC[1][0][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][0][1]: numCoeff: 2	trailingOnes: 2
+	trailingSign: -1 1 
+ChromaAC[1][1][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][1][1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+***** MB: 34 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 5
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 5
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+intra_chroma_pred_mode: 0
+coded_block_pattern: 47
+mb_qp_delta: 253
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 2	trailingOnes: 2
+	trailingSign: -1 1 
+ChromaDC[1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+Chroma Residual AC:
+ChromaAC[0][0][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][0][1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[0][1][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaAC[0][1][1]: numCoeff: 2	trailingOnes: 2
+	trailingSign: 1 -1 
+ChromaAC[1][0][0]: numCoeff: 4	trailingOnes: 1
+	trailingSign: -1 
+	levels: 3 -1 -2 
+ChromaAC[1][0][1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[1][1][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][1][1]: numCoeff: 2	trailingOnes: 2
+	trailingSign: 1 1 
+***** MB: 35 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+intra_chroma_pred_mode: 0
+coded_block_pattern: 47
+mb_qp_delta: 0
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 0	trailingOnes: 0
+ChromaDC[1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+Chroma Residual AC:
+ChromaAC[0][0][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][0][1]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][1][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][1][1]: numCoeff: 3	trailingOnes: 3
+	trailingSign: -1 1 -1 
+ChromaAC[1][0][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaAC[1][0][1]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][1][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaAC[1][1][1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+***** MB: 36 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 1
+intra_chroma_pred_mode: 57
+coded_block_pattern: 15
+mb_qp_delta: 11
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+***** MB: 37 *****
+mb_type: 3
+intra_chroma_pred_mode: 0
+mb_qp_delta: 0
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 2	trailingOnes: 2
+	trailingSign: -1 1 
+***** MB: 38 *****
+mb_type: 13
+intra_chroma_pred_mode: 2
+mb_qp_delta: 0
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 3	trailingOnes: 3
+	trailingSign: -1 -1 1 
+Luma Residual 16x16 AC:
+Luma16x16AC[0][0]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[0][1]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[1][0]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[1][1]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[0][2]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[0][3]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[1][2]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[1][3]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[2][0]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[2][1]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[3][0]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[3][1]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[2][2]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[2][3]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[3][2]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[3][3]: numCoeff: 0	trailingOnes: 0
+***** MB: 39 *****
+mb_type: 8
+intra_chroma_pred_mode: 0
+mb_qp_delta: 168
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 0	trailingOnes: 0
+ChromaDC[1]: numCoeff: 0	trailingOnes: 0
+***** MB: 40 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+intra_chroma_pred_mode: 0
+coded_block_pattern: 0
+mb_qp_delta: 205
+***** MB: 41 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 5
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 1
+intra_chroma_pred_mode: 6
+coded_block_pattern: 31
+mb_qp_delta: 0
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 3	trailingOnes: 0
+	levels: -2 1 -1 
+ChromaDC[1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+***** MB: 42 *****
+mb_type: 6
+intra_chroma_pred_mode: 0
+mb_qp_delta: 1
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaDC[1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+***** MB: 43 *****
+mb_type: 5
+intra_chroma_pred_mode: 2
+mb_qp_delta: 0
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 2	trailingOnes: 2
+	trailingSign: -1 -1 
+ChromaDC[1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+***** MB: 44 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 5
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+intra_chroma_pred_mode: 1
+coded_block_pattern: 12
+mb_qp_delta: 0
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+***** MB: 45 *****
+mb_type: 1
+intra_chroma_pred_mode: 11
+mb_qp_delta: 0
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 2	trailingOnes: 1
+	trailingSign: -1 
+	levels: 2 
+***** MB: 46 *****
+mb_type: 4
+intra_chroma_pred_mode: 2
+mb_qp_delta: 255
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 0	trailingOnes: 0
+***** MB: 47 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+intra_chroma_pred_mode: 3
+coded_block_pattern: 47
+mb_qp_delta: 0
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaDC[1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+Chroma Residual AC:
+ChromaAC[0][0][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaAC[0][0][1]: numCoeff: 2	trailingOnes: 2
+	trailingSign: -1 -1 
+ChromaAC[0][1][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][1][1]: numCoeff: 1	trailingOnes: 0
+	levels: -2 
+ChromaAC[1][0][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][0][1]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][1][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaAC[1][1][1]: numCoeff: 3	trailingOnes: 3
+	trailingSign: -1 1 -1 
+***** MB: 48 *****
+mb_type: 19
+intra_chroma_pred_mode: 0
+mb_qp_delta: 0
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 0	trailingOnes: 0
+Luma Residual 16x16 AC:
+Luma16x16AC[0][0]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[0][1]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[1][0]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[1][1]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[0][2]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[0][3]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[1][2]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[1][3]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[2][0]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[2][1]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[3][0]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[3][1]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[2][2]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[2][3]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[3][2]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 2	trailingOnes: 2
+	trailingSign: 1 -1 
+ChromaDC[1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+***** MB: 49 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 5
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 5
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+intra_chroma_pred_mode: 1
+coded_block_pattern: 21
+mb_qp_delta: 0
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaDC[1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+***** MB: 50 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 5
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+intra_chroma_pred_mode: 0
+coded_block_pattern: 0
+mb_qp_delta: 205
+***** MB: 51 *****
+mb_type: 4
+intra_chroma_pred_mode: 0
+mb_qp_delta: 0
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 2	trailingOnes: 2
+	trailingSign: 1 1 
+***** MB: 52 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 5
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+intra_chroma_pred_mode: 0
+coded_block_pattern: 47
+mb_qp_delta: 0
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 4	trailingOnes: 0
+	levels: 2 2 -1 1 
+ChromaDC[1]: numCoeff: 0	trailingOnes: 0
+Chroma Residual AC:
+ChromaAC[0][0][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[0][0][1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[0][1][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][1][1]: numCoeff: 3	trailingOnes: 3
+	trailingSign: 1 -1 -1 
+ChromaAC[1][0][0]: numCoeff: 5	trailingOnes: 3
+	trailingSign: 1 -1 1 
+	levels: 2 4 
+ChromaAC[1][0][1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaAC[1][1][0]: numCoeff: 4	trailingOnes: 2
+	trailingSign: 1 -1 
+	levels: -3 -1 
+ChromaAC[1][1][1]: numCoeff: 3	trailingOnes: 3
+	trailingSign: 1 -1 1 
+***** MB: 53 *****
+mb_type: 1
+intra_chroma_pred_mode: 0
+mb_qp_delta: 1
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 0	trailingOnes: 0
+***** MB: 54 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+intra_chroma_pred_mode: 1
+coded_block_pattern: 47
+mb_qp_delta: 0
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 2	trailingOnes: 2
+	trailingSign: -1 -1 
+ChromaDC[1]: numCoeff: 0	trailingOnes: 0
+Chroma Residual AC:
+ChromaAC[0][0][0]: numCoeff: 2	trailingOnes: 1
+	trailingSign: -1 
+	levels: 2 
+ChromaAC[0][0][1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaAC[0][1][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][1][1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[1][0][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][0][1]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][1][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[1][1][1]: numCoeff: 0	trailingOnes: 0
+***** MB: 55 *****
+mb_type: 1
+intra_chroma_pred_mode: 0
+mb_qp_delta: 0
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 12	trailingOnes: 1
+	trailingSign: -1 
+	levels: -3 3 -2 -1 2 -1 -2 -3 -2 1 3 
+***** MB: 56 *****
+mb_type: 4
+intra_chroma_pred_mode: 89
+mb_qp_delta: 0
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+***** MB: 57 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 5
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 3
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+intra_chroma_pred_mode: 0
+coded_block_pattern: 47
+mb_qp_delta: 0
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaDC[1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+Chroma Residual AC:
+ChromaAC[0][0][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][0][1]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][1][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[0][1][1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[1][0][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][0][1]: numCoeff: 2	trailingOnes: 1
+	trailingSign: 1 
+	levels: 2 
+ChromaAC[1][1][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][1][1]: numCoeff: 2	trailingOnes: 1
+	trailingSign: -1 
+	levels: 2 
+***** MB: 58 *****
+mb_type: 1
+intra_chroma_pred_mode: 0
+mb_qp_delta: 255
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+***** MB: 59 *****
+mb_type: 3
+intra_chroma_pred_mode: 10
+mb_qp_delta: 0
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 2	trailingOnes: 2
+	trailingSign: -1 1 
+***** MB: 60 *****
+mb_type: 5
+intra_chroma_pred_mode: 0
+mb_qp_delta: 1
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 0	trailingOnes: 0
+ChromaDC[1]: numCoeff: 0	trailingOnes: 0
+***** MB: 61 *****
+mb_type: 6
+intra_chroma_pred_mode: 0
+mb_qp_delta: 250
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 4	trailingOnes: 0
+	levels: 2 1 -1 1 
+ChromaDC[1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+***** MB: 62 *****
+mb_type: 10
+intra_chroma_pred_mode: 19
+mb_qp_delta: 255
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 2	trailingOnes: 2
+	trailingSign: -1 1 
+ChromaDC[1]: numCoeff: 0	trailingOnes: 0
+Chroma Residual AC:
+ChromaAC[0][0][0]: numCoeff: 2	trailingOnes: 0
+	levels: 3 2 
+ChromaAC[0][0][1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[0][1][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][1][1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaAC[1][0][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[1][0][1]: numCoeff: 3	trailingOnes: 3
+	trailingSign: -1 -1 -1 
+ChromaAC[1][1][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][1][1]: numCoeff: 5	trailingOnes: 3
+	trailingSign: 1 -1 -1 
+	levels: 2 2 
+***** MB: 63 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 6
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+intra_chroma_pred_mode: 0
+coded_block_pattern: 47
+mb_qp_delta: 0
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaDC[1]: numCoeff: 0	trailingOnes: 0
+Chroma Residual AC:
+ChromaAC[0][0][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][0][1]: numCoeff: 2	trailingOnes: 2
+	trailingSign: -1 -1 
+ChromaAC[0][1][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[0][1][1]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][0][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[1][0][1]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][1][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[1][1][1]: numCoeff: 0	trailingOnes: 0
+***** MB: 64 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 7
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 1
+prev_intra4x4_pred_mode_flag: 1
+intra_chroma_pred_mode: 0
+coded_block_pattern: 15
+mb_qp_delta: 0
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+***** MB: 65 *****
+mb_type: 2
+intra_chroma_pred_mode: 1
+mb_qp_delta: 255
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 2	trailingOnes: 2
+	trailingSign: -1 -1 
+***** MB: 66 *****
+mb_type: 13
+intra_chroma_pred_mode: 0
+mb_qp_delta: 0
+Luma Residual 16x16 DC:
+Luma16x16DC: numCoeff: 2	trailingOnes: 2
+	trailingSign: 1 -1 
+Luma Residual 16x16 AC:
+Luma16x16AC[0][0]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[0][1]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[1][0]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[1][1]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[0][2]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[0][3]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[1][2]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[1][3]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[2][0]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[2][1]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[3][0]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[3][1]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[2][2]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[2][3]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[3][2]: numCoeff: 0	trailingOnes: 0
+Luma16x16AC[3][3]: numCoeff: 0	trailingOnes: 0
+***** MB: 67 *****
+mb_type: 0
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 4
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 2
+prev_intra4x4_pred_mode_flag: 0
+rem_intra4x4_pred_mode: 0
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+prev_intra4x4_pred_mode_flag: 1
+intra_chroma_pred_mode: 1
+coded_block_pattern: 47
+mb_qp_delta: 0
+Luma Residual 4x4:
+Luma[0][0]: numCoeff: 0	trailingOnes: 0
+Luma[0][1]: numCoeff: 0	trailingOnes: 0
+Luma[1][0]: numCoeff: 0	trailingOnes: 0
+Luma[1][1]: numCoeff: 0	trailingOnes: 0
+Luma[0][2]: numCoeff: 0	trailingOnes: 0
+Luma[0][3]: numCoeff: 0	trailingOnes: 0
+Luma[1][2]: numCoeff: 0	trailingOnes: 0
+Luma[1][3]: numCoeff: 0	trailingOnes: 0
+Luma[2][0]: numCoeff: 0	trailingOnes: 0
+Luma[2][1]: numCoeff: 0	trailingOnes: 0
+Luma[3][0]: numCoeff: 0	trailingOnes: 0
+Luma[3][1]: numCoeff: 0	trailingOnes: 0
+Luma[2][2]: numCoeff: 0	trailingOnes: 0
+Luma[2][3]: numCoeff: 0	trailingOnes: 0
+Luma[3][2]: numCoeff: 0	trailingOnes: 0
+Luma[3][3]: numCoeff: 0	trailingOnes: 0
+Chroma Residual DC:
+ChromaDC[0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+ChromaDC[1]: numCoeff: 1	trailingOnes: 1
+	trailingSign: -1 
+Chroma Residual AC:
+ChromaAC[0][0][0]: numCoeff: 4	trailingOnes: 2
+	trailingSign: 1 1 
+	levels: 3 1 
+ChromaAC[0][0][1]: numCoeff: 2	trailingOnes: 2
+	trailingSign: 1 1 
+ChromaAC[0][1][0]: numCoeff: 4	trailingOnes: 2
+	trailingSign: 1 1 
+	levels: -2 -4 
+ChromaAC[0][1][1]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][0][0]: numCoeff: 1	trailingOnes: 1
+	trailingSign: 1 
+ChromaAC[1][0][1]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][1][0]: numCoeff: 0	trailingOnes: 0
+ChromaAC[1][1][1]: numCoeff: 0	trailingOnes: 0

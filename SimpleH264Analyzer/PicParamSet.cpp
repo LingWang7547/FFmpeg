@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "PicParamSet.h"
 
+using namespace std;
 
 CPicParamSet::CPicParamSet()
 {
