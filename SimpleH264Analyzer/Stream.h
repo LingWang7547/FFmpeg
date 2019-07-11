@@ -10,26 +10,24 @@ class CSliceStruct;
 class CStreamFile
 {
 public:
-	CStreamFile(char* fileName);
+	CStreamFile(char *fileName);
 	~CStreamFile();
 
-	//open api
+	//Open API
 	int Parse_h264_bitstream();
-	void dump_NAL_type(UINT8 nalType);
+	void Dump_NAL_type(UINT8 nalType);
 
 private:
-	FILE* inputFile;
-	char* fileName;
-	std::vector<UINT8> nalVec;
+	FILE	*m_inputFile;
+	char	*m_fileName;
+	std::vector<UINT8> m_nalVec;
 
-	void file_info();
-	void file_error(int idx);
-	int  find_nal_prefix();
-	void ebsp_to_sodb();
+	void	file_info();
+	void	file_error(int idx);
+	int		find_nal_prefix();
+	void	ebsp_to_sodb();
 
-	
-
-	CSeqParamSet *sps;
-	CPicParamSet *pps;
-	CSliceStruct *IDRSlice;
+	CSeqParamSet *m_sps;
+	CPicParamSet *m_pps;
+	CSliceStruct *m_IDRSlice;
 };
