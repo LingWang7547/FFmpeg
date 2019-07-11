@@ -24,7 +24,7 @@ typedef struct Coeff4x4Block
 	UINT16 coeffToken;
 	UINT8  numCoeff;
 	UINT8  trailingOnes;
-	int    trailingSign[3];
+	int  trailingSign[3];
 	int    levels[16];
 	UINT8  totalZeros;
 	UINT8  runBefore[16];
@@ -49,10 +49,8 @@ public:
 	CResidual(UINT8 *pSODB, UINT32 offset, CMacroBlock *mb);
 	~CResidual();
 
-	// open api
-	int Parse_macroblock_residual();
-
-	/*
+	// ½âÎöºê¿éµÄÔ¤²â²Ð²î
+	int Parse_macroblock_residual(UINT32 &dataLength);
 	UINT8 Get_sub_block_number_coeffs(int block_idc_row, int block_idc_column);
 	UINT8 Get_sub_block_number_coeffs_chroma(int component, int block_idc_row, int block_idc_column);
 	void Restore_coeff_matrix();
@@ -66,23 +64,14 @@ public:
 
 	int m_residual_matrix_luma[16][4][4];
 	int m_residual_matrix_chroma[2][4][4][4];
-	*/
 
 private:
-	CMacroBlock *macroblock_belongs;
-	UINT8  *pSODB;
-	UINT32 byteOffset;
-	UINT8  bitOffset;
+	CMacroBlock *m_macroblock_belongs;
+	UINT8  *m_pSODB;
+	UINT32 m_bypeOffset;
+	UINT8  m_bitOffset;
 
-	Coeff4x4Block luma_residual[4][4];
-
-	int parse_luma_residual(UINT8 cbp_luma);
-	int get_luma4x4_coeffs(int block_idc_x, int block_idc_y);
-
-	/*
 	int m_qp;
-
-
 
 	int m_coeff_matrix_luma[16][4][4];
 	int m_coeff_matrix_chroma[2][4][4][4];
@@ -94,8 +83,9 @@ private:
 	Coeff4x4Block luma_residual16x16_DC;
 	Coeff4x4Block luma_residual16x16_AC[4][4];
 
-	
-	
+	int parse_luma_residual(int blockType, UINT8 cbp_luma);
+	int get_luma4x4_coeffs(int blockType, int block_idc_row, int block_idc_column);
+
 	int parse_luma_residual_16x16_DC();
 
 	int parse_chroma_residual(UINT8 cbp_chroma);
@@ -121,5 +111,4 @@ private:
 	void insert_matrix(int(*matrix)[4][4], int *block, int start, int maxCoeffNum, int x, int y);
 	void coeff_invers_transform(int(*coeff_buf)[4], int(*residual_buf)[4]);
 	void coeff_invers_DC_coeff(int(*coeff_buf)[4]);
-	*/
 };

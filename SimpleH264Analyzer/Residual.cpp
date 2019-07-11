@@ -1,9 +1,7 @@
-#include "pch.h"
+ï»¿#include "pch.h"
 #include "Residual.h"
-
-#include "Residual.h"
-#include "Macroblock.h"
-#include "Macroblock_Defines.h"
+#include "MacroBlock.h"
+#include "MacroBlock_Defines.h"
 #include "PicParamSet.h"
 #include "CAVLC_Defines.h"
 
@@ -18,12 +16,11 @@ void swap(int &x, int &y)
 
 CResidual::CResidual(UINT8 *pSODB, UINT32 offset, CMacroBlock *mb)
 {
-	this->macroblock_belongs = mb;
-	this->pSODB = pSODB;
-	this->byteOffset = offset / 8;
-	this->bitOffset = offset % 8;
+	m_macroblock_belongs = mb;
+	m_pSODB = pSODB;
+	m_bypeOffset = offset / 8;
+	m_bitOffset = offset % 8;
 
-	/*
 	for (int idx = 0; idx < 16; idx++)
 	{
 		for (int i = 0; i < 16; i++)
@@ -50,23 +47,16 @@ CResidual::CResidual(UINT8 *pSODB, UINT32 offset, CMacroBlock *mb)
 			}
 		}
 	}
-	*/
 }
 
 CResidual::~CResidual()
 {
 }
 
-int CResidual::Parse_macroblock_residual()
+int CResidual::Parse_macroblock_residual(UINT32 &dataLength)
 {
-	
-	UINT8 cbp_luma = macroblock_belongs->cbp_luma;
-	UINT8 cbp_chroma = macroblock_belongs->cbp_chroma;
-	if (cbp_luma)
-	{
-		parse_luma_residual(cbp_luma);
-	}
-	/*
+	UINT8 cbp_luma = m_macroblock_belongs->m_cbp_luma;
+	UINT8 cbp_chroma = m_macroblock_belongs->m_cbp_chroma;
 	UINT32 originOffset = 8 * m_bypeOffset + m_bitOffset;
 
 	m_qp = m_macroblock_belongs->m_mb_qp;
@@ -98,221 +88,8 @@ int CResidual::Parse_macroblock_residual()
 
 	dataLength = 8 * m_bypeOffset + m_bitOffset - originOffset;
 	return kPARSING_ERROR_NO_ERROR;
-	*/
-	return 0;
 }
 
-int CResidual::parse_luma_residual(UINT8 cbp_luma)
-{
-	int err = 0;
-	int idx8x8 = 0;
-	int block_x = 0, int block_y = 0, block_sub_idc_x = 0, block_sub_idc_y = 0;
-	for (block_y = 0; block_y < 4; block_y += 2)
-	{
-		for (block_x = 0; block_x < 4; block_x += 2)
-		{
-			if (macroblock_belongs->get_pps_active()->Get_entropy_coding_flag() == false)
-			{
-				//CAVLC
-				for (block_sub_idc_y = 0; block_sub_idc_y < block_y + 2; block_sub_idc_y++)
-				{
-					for (block_sub_idc_x = 0; block_sub_idc_x < block_x + 2; block_sub_idc_x++)
-					{
-						idx8x8 = 2 * (block_y / 2) + block_x / 2;
-						if (cbp_luma & (1 << idx8x8))
-						{
-							// 1111
-							luma_residual[block_sub_idc_y][block_sub_idc_x].emptyBlock = false;
-							err = get_luma4x4_coeffs(block_sub_idc_x, block_sub_idc_y);
-							if (err < 0)
-							{
-								return err;
-							}
-						}
-						else
-						{
-							luma_residual[block_sub_idc_y][block_sub_idc_x].emptyBlock = true;
-						}
-					}
-				}
-			}
-			else
-			{
-				//CABAC
-			}
-		}
-	}
-	return err;
-}
-
-int CResidual::get_luma4x4_coeffs(int block_idc_x, int block_idc_y)
-{
-	int err = 0;
-	int mb_type = macroblock_belongs->mb_type;
-	int block_type = (mb_type == I16MB || mb_type == IPCM) ? LUMA_INTRA16x16AC : LUMA;
-
-	int max_coeff_num = 0;
-	int numCoeff_vlcIdx = 0, prefixLength = 0, suffixLength = 0, level_prefix = 0, level_suffix = 0;
-	int levelSuffixSize = 0, levelCode = 0, i = 0;
-
-	switch (block_type)
-	{
-	case LUMA:
-		max_coeff_num = 16;
-		targetBlock = &luma_residual[block_idc_column][block_idc_row];
-		break;
-	case LUMA_INTRA16x16DC:
-		max_coeff_num = 16;
-		targetBlock = &luma_residual16x16_DC;
-		break;
-	case LUMA_INTRA16x16AC:
-		max_coeff_num = 15;
-		targetBlock = &luma_residual16x16_AC[block_idc_column][block_idc_row];
-		break;
-	default:
-		break;
-	}
-
-	int numberCurrent = m_macroblock_belongs->Get_number_current(block_idc_row, block_idc_column);
-	if (numberCurrent < 2)
-	{
-		numCoeff_vlcIdx = 0;
-	}
-	else if (numberCurrent < 4)
-	{
-		numCoeff_vlcIdx = 1;
-	}
-	else if (numberCurrent < 8)
-	{
-		numCoeff_vlcIdx = 2;
-	}
-	else
-	{
-		numCoeff_vlcIdx = 3;
-	}
-
-	return err;
-}
-
-int CResidual::get_luma4x4_coeffs(int block_idc_row, int block_idc_column)
-{
-	int err = 0;
-
-	Coeff4x4Block *targetBlock = NULL;
-
-	
-
-	
-
-	// NumCoeff & TrailingOnes...
-	UINT8 numCoeff = 0, trailingOnes = 0;
-	int token = 0;
-	err = get_numCoeff_and_trailingOnes(numCoeff, trailingOnes, token, numCoeff_vlcIdx);
-	if (err < 0)
-	{
-		return err;
-	}
-	else
-	{
-		targetBlock->coeffToken = token;
-		targetBlock->numCoeff = numCoeff;
-		targetBlock->trailingOnes = trailingOnes;
-	}
-
-	if (numCoeff) //°üº¬·Ç0ÏµÊý
-	{
-		if (trailingOnes) //ÍÏÎ²ÏµÊý
-		{
-			//¶ÁÈ¡ÍÏÎ²ÏµÊý·ûºÅ
-			int signValue = Get_uint_code_num(m_pSODB, m_bypeOffset, m_bitOffset, trailingOnes);
-			int trailingCnt = trailingOnes;
-			for (int coeffIdx = 0; coeffIdx < trailingOnes; coeffIdx++)
-			{
-				trailingCnt--;
-				if ((signValue >> trailingCnt) & 1)
-				{
-					targetBlock->trailingSign[coeffIdx] = -1;
-				}
-				else
-				{
-					targetBlock->trailingSign[coeffIdx] = 1;
-				}
-			}
-		}
-
-		//¶ÁÈ¡½âÎölevelÖµ
-		int level = 0;
-		if (numCoeff > 10 && trailingOnes < 3)
-		{
-			//¸ù¾ÝÉÏÏÂÎÄ³õÊ¼»¯suffixLength
-			suffixLength = 1;
-		}
-		for (int k = 0; k <= numCoeff - 1 - trailingOnes; k++)
-		{
-			err = get_coeff_level(level, k, trailingOnes, suffixLength);
-			if (err < 0)
-			{
-				return err;
-			}
-
-			if (suffixLength == 0)
-			{
-				suffixLength = 1;
-			}
-
-			if ((abs(level) > (3 << (suffixLength - 1))) && (suffixLength < 6))
-			{
-				suffixLength++;
-			}
-
-			targetBlock->levels[k] = level;
-		}
-
-		// ¶ÁÈ¡½âÎörun
-		UINT8 zerosLeft = 0, totalZeros = 0, run = 0;
-		if (numCoeff < max_coeff_num)
-		{
-			err = get_total_zeros(totalZeros, numCoeff - 1);
-			if (err < 0)
-			{
-				return err;
-			}
-		}
-		else
-		{
-			totalZeros = 0;
-		}
-		targetBlock->totalZeros = totalZeros;
-
-		//¶ÁÈ¡½âÎörun_before
-		int runBefore_vlcIdx = 0;
-		i = numCoeff - 1;
-		zerosLeft = totalZeros;
-		if (zerosLeft > 0 && i > 0)
-		{
-			do
-			{
-				runBefore_vlcIdx = (zerosLeft - 1 < 6 ? zerosLeft - 1 : 6);
-				err = get_run_before(run, runBefore_vlcIdx);
-				if (err < 0)
-				{
-					return err;
-				}
-				targetBlock->runBefore[i] = run;
-				zerosLeft -= run;
-				i--;
-			} while (zerosLeft != 0 && i != 0);
-		}
-		else
-		{
-			run = 0;
-		}
-		targetBlock->runBefore[i] = zerosLeft;
-	}
-
-	return kPARSING_ERROR_NO_ERROR;
-}
-/*
 UINT8 CResidual::Get_sub_block_number_coeffs(int block_idc_row, int block_idc_column)
 {
 	UINT8 numCoeff = 0;
@@ -677,7 +454,160 @@ int CResidual::parse_luma_residual(int blockType, UINT8 cbp_luma)
 	return kPARSING_ERROR_NO_ERROR;
 }
 
+int CResidual::get_luma4x4_coeffs(int blockType, int block_idc_row, int block_idc_column)
+{
+	int err = 0;
+	int mb_type = m_macroblock_belongs->m_mb_type;
+	int max_coeff_num = 0;
+	int numCoeff_vlcIdx = 0, prefixLength = 0, suffixLength = 0, level_prefix = 0, level_suffix = 0;
+	int levelSuffixSize = 0, levelCode = 0, i = 0;
 
+	Coeff4x4Block *targetBlock = NULL;
+
+	switch (blockType)
+	{
+	case LUMA:
+		max_coeff_num = 16;
+		targetBlock = &luma_residual[block_idc_column][block_idc_row];
+		break;
+	case LUMA_INTRA16x16DC:
+		max_coeff_num = 16;
+		targetBlock = &luma_residual16x16_DC;
+		break;
+	case LUMA_INTRA16x16AC:
+		max_coeff_num = 15;
+		targetBlock = &luma_residual16x16_AC[block_idc_column][block_idc_row];
+		break;
+	default:
+		break;
+	}
+
+	int numberCurrent = m_macroblock_belongs->Get_number_current(block_idc_row, block_idc_column);
+	if (numberCurrent < 2)
+	{
+		numCoeff_vlcIdx = 0;
+	}
+	else if (numberCurrent < 4)
+	{
+		numCoeff_vlcIdx = 1;
+	}
+	else if (numberCurrent < 8)
+	{
+		numCoeff_vlcIdx = 2;
+	}
+	else
+	{
+		numCoeff_vlcIdx = 3;
+	}
+
+	// NumCoeff & TrailingOnes...
+	UINT8 numCoeff = 0, trailingOnes = 0;
+	int token = 0;
+	err = get_numCoeff_and_trailingOnes(numCoeff, trailingOnes, token, numCoeff_vlcIdx);
+	if (err < 0)
+	{
+		return err;
+	}
+	else
+	{
+		targetBlock->coeffToken = token;
+		targetBlock->numCoeff = numCoeff;
+		targetBlock->trailingOnes = trailingOnes;
+	}
+
+	if (numCoeff) //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0Ïµï¿½ï¿½
+	{
+		if (trailingOnes) //ï¿½ï¿½Î²Ïµï¿½ï¿½
+		{
+			//ï¿½ï¿½È¡ï¿½ï¿½Î²Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			int signValue = Get_uint_code_num(m_pSODB, m_bypeOffset, m_bitOffset, trailingOnes);
+			int trailingCnt = trailingOnes;
+			for (int coeffIdx = 0; coeffIdx < trailingOnes; coeffIdx++)
+			{
+				trailingCnt--;
+				if ((signValue >> trailingCnt) & 1)
+				{
+					targetBlock->trailingSign[coeffIdx] = -1;
+				}
+				else
+				{
+					targetBlock->trailingSign[coeffIdx] = 1;
+				}
+			}
+		}
+
+		//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½levelÖµ
+		int level = 0;
+		if (numCoeff > 10 && trailingOnes < 3)
+		{
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä³ï¿½Ê¼ï¿½ï¿½suffixLength
+			suffixLength = 1;
+		}
+		for (int k = 0; k <= numCoeff - 1 - trailingOnes; k++)
+		{
+			err = get_coeff_level(level, k, trailingOnes, suffixLength);
+			if (err < 0)
+			{
+				return err;
+			}
+
+			if (suffixLength == 0)
+			{
+				suffixLength = 1;
+			}
+
+			if ((abs(level) > (3 << (suffixLength - 1))) && (suffixLength < 6))
+			{
+				suffixLength++;
+			}
+
+			targetBlock->levels[k] = level;
+		}
+
+		// ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½run
+		UINT8 zerosLeft = 0, totalZeros = 0, run = 0;
+		if (numCoeff < max_coeff_num)
+		{
+			err = get_total_zeros(totalZeros, numCoeff - 1);
+			if (err < 0)
+			{
+				return err;
+			}
+		}
+		else
+		{
+			totalZeros = 0;
+		}
+		targetBlock->totalZeros = totalZeros;
+
+		//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½run_before
+		int runBefore_vlcIdx = 0;
+		i = numCoeff - 1;
+		zerosLeft = totalZeros;
+		if (zerosLeft > 0 && i > 0)
+		{
+			do
+			{
+				runBefore_vlcIdx = (zerosLeft - 1 < 6 ? zerosLeft - 1 : 6);
+				err = get_run_before(run, runBefore_vlcIdx);
+				if (err < 0)
+				{
+					return err;
+				}
+				targetBlock->runBefore[i] = run;
+				zerosLeft -= run;
+				i--;
+			} while (zerosLeft != 0 && i != 0);
+		}
+		else
+		{
+			run = 0;
+		}
+		targetBlock->runBefore[i] = zerosLeft;
+	}
+
+	return kPARSING_ERROR_NO_ERROR;
+}
 
 int CResidual::parse_luma_residual_16x16_DC()
 {
@@ -752,11 +682,11 @@ int CResidual::get_chroma_DC_coeffs(int chroma_idx)
 		chroma_DC_residual[chroma_idx].trailingOnes = trailingOnes;
 	}
 
-	if (numCoeff) //°üº¬·Ç0ÏµÊý
+	if (numCoeff) //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0Ïµï¿½ï¿½
 	{
-		if (trailingOnes) //ÍÏÎ²ÏµÊý
+		if (trailingOnes) //ï¿½ï¿½Î²Ïµï¿½ï¿½
 		{
-			//¶ÁÈ¡ÍÏÎ²ÏµÊý·ûºÅ
+			//ï¿½ï¿½È¡ï¿½ï¿½Î²Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			int signValue = Get_uint_code_num(m_pSODB, m_bypeOffset, m_bitOffset, trailingOnes);
 			int trailingCnt = trailingOnes;
 			for (int coeffIdx = 0; coeffIdx < trailingOnes; coeffIdx++)
@@ -773,11 +703,11 @@ int CResidual::get_chroma_DC_coeffs(int chroma_idx)
 			}
 		}
 
-		//¶ÁÈ¡½âÎölevelÖµ
+		//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½levelÖµ
 		int level = 0;
 		if (numCoeff > 10 && trailingOnes < 3)
 		{
-			//¸ù¾ÝÉÏÏÂÎÄ³õÊ¼»¯suffixLength
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä³ï¿½Ê¼ï¿½ï¿½suffixLength
 			suffixLength = 1;
 		}
 		for (int k = 0; k <= numCoeff - 1 - trailingOnes; k++)
@@ -802,7 +732,7 @@ int CResidual::get_chroma_DC_coeffs(int chroma_idx)
 		}
 
 
-		// ¶ÁÈ¡½âÎörun
+		// ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½run
 		UINT8 zerosLeft = 0, totalZeros = 0, run = 0;
 		if (numCoeff < max_coeff_num)
 		{
@@ -818,7 +748,7 @@ int CResidual::get_chroma_DC_coeffs(int chroma_idx)
 		}
 		chroma_DC_residual[chroma_idx].totalZeros = totalZeros;
 
-		//¶ÁÈ¡½âÎörun_before
+		//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½run_before
 		int runBefore_vlcIdx = 0;
 		int i = numCoeff - 1;
 		zerosLeft = totalZeros;
@@ -886,11 +816,11 @@ int CResidual::get_chroma_AC_coeffs(int chroma_idx, int block_idc_row, int block
 		chroma_AC_residual[chroma_idx][block_idc_column][block_idc_row].trailingOnes = trailingOnes;
 	}
 
-	if (numCoeff) //°üº¬·Ç0ÏµÊý
+	if (numCoeff) //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0Ïµï¿½ï¿½
 	{
-		if (trailingOnes) //ÍÏÎ²ÏµÊý
+		if (trailingOnes) //ï¿½ï¿½Î²Ïµï¿½ï¿½
 		{
-			//¶ÁÈ¡ÍÏÎ²ÏµÊý·ûºÅ
+			//ï¿½ï¿½È¡ï¿½ï¿½Î²Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			int signValue = Get_uint_code_num(m_pSODB, m_bypeOffset, m_bitOffset, trailingOnes);
 			int trailingCnt = trailingOnes;
 			for (int coeffIdx = 0; coeffIdx < trailingOnes; coeffIdx++)
@@ -907,11 +837,11 @@ int CResidual::get_chroma_AC_coeffs(int chroma_idx, int block_idc_row, int block
 			}
 		}
 
-		//¶ÁÈ¡½âÎölevelÖµ
+		//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½levelÖµ
 		int level = 0;
 		if (numCoeff > 10 && trailingOnes < 3)
 		{
-			//¸ù¾ÝÉÏÏÂÎÄ³õÊ¼»¯suffixLength
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä³ï¿½Ê¼ï¿½ï¿½suffixLength
 			suffixLength = 1;
 		}
 		for (int k = 0; k <= numCoeff - 1 - trailingOnes; k++)
@@ -935,7 +865,7 @@ int CResidual::get_chroma_AC_coeffs(int chroma_idx, int block_idc_row, int block
 			chroma_AC_residual[chroma_idx][block_idc_column][block_idc_row].levels[k] = level;
 		}
 
-		// ¶ÁÈ¡½âÎörun
+		// ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½run
 		UINT8 zerosLeft = 0, totalZeros = 0, run = 0;
 		if (numCoeff < max_coeff_num)
 		{
@@ -951,7 +881,7 @@ int CResidual::get_chroma_AC_coeffs(int chroma_idx, int block_idc_row, int block
 		}
 		chroma_AC_residual[chroma_idx][block_idc_column][block_idc_row].totalZeros = totalZeros;
 
-		//¶ÁÈ¡½âÎörun_before
+		//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½run_before
 		int runBefore_vlcIdx = 0;
 		i = numCoeff - 1;
 		zerosLeft = totalZeros;
@@ -1477,5 +1407,3 @@ void CResidual::coeff_invers_DC_coeff(int(*coeff_buf)[4])
 		}
 	}
 }
-
-*/
