@@ -22,6 +22,12 @@
     <Filter Include="5.MacroBlock">
       <UniqueIdentifier>{b54d0186-7b94-4360-98f0-b4437efd4d11}</UniqueIdentifier>
     </Filter>
+    <Filter Include="6.Residual">
+      <UniqueIdentifier>{bf934ef0-9d82-474e-b871-d8dc354ea292}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="7.CAVLC">
+      <UniqueIdentifier>{77da4e6e-0b0d-4404-8bec-3c7a984e808d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Stream.h">
@@ -57,6 +63,15 @@
     <ClInclude Include="MacroBlock.h">
       <Filter>5.MacroBlock</Filter>
     </ClInclude>
+    <ClInclude Include="Residual.h">
+      <Filter>1.Application</Filter>
+    </ClInclude>
+    <ClInclude Include="MacroBlock_Defines.h">
+      <Filter>5.MacroBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="CAVLC_Defines.h">
+      <Filter>7.CAVLC</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SimpleH264Analyzer.cpp">
@@ -91,6 +106,9 @@
     </ClCompile>
     <ClCompile Include="MacroBlock.cpp">
       <Filter>5.MacroBlock</Filter>
+    </ClCompile>
+    <ClCompile Include="Residual.cpp">
+      <Filter>2.Stream</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

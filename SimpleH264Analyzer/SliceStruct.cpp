@@ -63,6 +63,7 @@ int CSliceStruct::Parse()
 		macroblocks[idx] = new CMacroBlock(pSODB, macroblockOffset, idx);
 
 		macroblocks[idx]->Set_pic_param_set(pps_active);
+		macroblocks[idx]->Set_slice_struct(this);
 
 		macroblockOffset += macroblocks[idx]->Parse_macroblock();
 		//macroblocks[idx]->Decode_macroblock();

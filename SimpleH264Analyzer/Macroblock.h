@@ -1,7 +1,7 @@
 #pragma once
 class CPicParamSet;
 class CSliceStruct;
-
+class CResidual;
 
 typedef struct IntraPredStruct
 {
@@ -25,9 +25,17 @@ public:
 	~CMacroBlock();
 	
 	void Set_pic_param_set(CPicParamSet* pps);
+	void Set_slice_struct(CSliceStruct* slicestruct);
 	UINT32 Parse_macroblock();
 
+	CPicParamSet* get_pps_active();
+	int Get_number_current(int block_idx_x, int block_idx_y);
+
 	void Dump_macroblock_info();
+
+	UINT8 cbp_luma;
+	UINT8 cbp_chroma;
+	UINT8 mb_type;
 
 private:
 	UINT8  *pSODB;
@@ -36,9 +44,10 @@ private:
 	UINT32 mbDataSize;
 
 	CPicParamSet* pps_active;
+	CSliceStruct* slice;
 
 	UINT32 mb_idx;
-	UINT8 mb_type;
+	
 	bool transform_size_8x8_flag;
 
 	IntraPredStruct* pred_struct;
@@ -47,7 +56,9 @@ private:
 	UINT8 coded_block_pattern;
 	UINT8 mb_qp_delta;
 
-	UINT8 cbp_luma;
-	UINT8 cbp_chroma;
+	CResidual* residual;
+
+	void interpret_mb_mode();
+	int get_neighbor_available(bool &available_top, bool &available_left, int &topIdx, int &leftIdx, int block_idc_x, int block_idc_y);
 	};
 

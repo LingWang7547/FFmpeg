@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{B31C21AD-43B2-4DA7-A56C-39B1A99472D2}</ProjectGuid>
+    <ProjectGuid>{166E6E74-20BF-48BB-8E1A-905F1D45F11D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>SimpleH264Analyzer</RootNamespace>
+    <RootNamespace>DemoCAVLC</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -87,7 +87,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <SDLCheck>false</SDLCheck>
+      <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -151,39 +151,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="CAVLC_Defines.h" />
-    <ClInclude Include="Configuration.h" />
-    <ClInclude Include="Global.h" />
-    <ClInclude Include="MacroBlock.h" />
-    <ClInclude Include="MacroBlock_Defines.h" />
-    <ClInclude Include="NALUnit.h" />
+    <ClInclude Include="CAVLC.h" />
+    <ClInclude Include="CAVLC_Map.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="PicParamSet.h" />
-    <ClInclude Include="Residual.h" />
-    <ClInclude Include="SeqParamSet.h" />
-    <ClInclude Include="SliceHeader.h" />
-    <ClInclude Include="SliceStruct.h" />
-    <ClInclude Include="Stream.h" />
-    <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Configuration.cpp" />
-    <ClCompile Include="MacroBlock.cpp" />
-    <ClCompile Include="PicParamSet.cpp" />
-    <ClCompile Include="NALUnit.cpp" />
+    <ClCompile Include="CAVLC.cpp" />
+    <ClCompile Include="DemoCAVLC.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Residual.cpp" />
-    <ClCompile Include="SeqParamSet.cpp" />
-    <ClCompile Include="SimpleH264Analyzer.cpp" />
-    <ClCompile Include="SliceHeader.cpp" />
-    <ClCompile Include="SliceStruct.cpp" />
-    <ClCompile Include="Stream.cpp" />
-    <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,6 +1,10 @@
 #include "pch.h"
 #include "MacroBlock.h"
 #include "PicParamSet.h"
+#include "Residual.h"
+#include "SliceStruct.h"
+#include "SliceHeader.h"
+#include "MacroBlock_Defines.h"
 
 using namespace std;
 
@@ -25,6 +29,8 @@ CMacroBlock::CMacroBlock(UINT8* pSODB, UINT32 offset, UINT32 idx)
 
 	cbp_luma = 0;
 	cbp_chroma = 0;
+
+	residual = NULL;
 }
 
 CMacroBlock::~CMacroBlock()
@@ -34,11 +40,21 @@ CMacroBlock::~CMacroBlock()
 		delete pred_struct;
 		pred_struct = NULL;
 	}
+	if (!residual)
+	{
+		delete residual;
+		residual = NULL;
+	}
 }
 
 void CMacroBlock::Set_pic_param_set(CPicParamSet * pps)
 {
 	pps_active = pps;
+}
+
+void CMacroBlock::Set_slice_struct(CSliceStruct * slicestruct)
+{
+	this->slice = slicestruct;
 }
 
 UINT32 CMacroBlock::Parse_macroblock()
@@ -103,12 +119,29 @@ UINT32 CMacroBlock::Parse_macroblock()
 	}
 	if (cbp_luma > 0 || cbp_chroma > 0 || (mb_type > 0 && mb_type < 25))
 	{
+		interpret_mb_mode();
 		mb_qp_delta = Get_sev_code_num(pSODB, byteOffset, bitOffset);
+		residual = new CResidual(pSODB, byteOffset * 8 + bitOffset, this);
+		residual->Parse_macroblock_residual();
 	}
 	// 输出macroblock 基本信息
 	Dump_macroblock_info();
 	mbDataSize = byteOffset * 8 + bitOffset - mbDataSize;
 	return mbDataSize;
+}
+
+CPicParamSet * CMacroBlock::get_pps_active()
+{
+	return pps_active;
+}
+
+int CMacroBlock::Get_number_current(int block_idx_x, int block_idx_y)
+{
+	int nc = 0, topIdx = 0, leftIdx = 0, leftNum = 0;
+	bool available_top = false, available_left = false;
+
+
+	return nc;
 }
 
 void CMacroBlock::Dump_macroblock_info()
@@ -142,4 +175,34 @@ void CMacroBlock::Dump_macroblock_info()
 #endif
 
 #endif
+}
+
+void CMacroBlock::interpret_mb_mode()
+{
+	UINT8 slice_type = slice->sliceHeader->Get_slice_type();
+	switch (slice_type)
+	{
+	case SLICE_TYPE_I:
+		if (mb_type == 0)
+		{
+			mb_type = I4MB;
+		}
+		else if (mb_type == 25)
+		{
+			mb_type = IPCM;
+		}
+		else
+		{
+			mb_type = I16MB;
+		}
+	default:
+		break;
+	}
+}
+
+int CMacroBlock::get_neighbor_available(bool & available_top, bool & available_left, int & topIdx, int & leftIdx, int block_idc_x, int block_idc_y)
+{
+	int _mb_idx = mb_idx;
+
+	return 0;
 }
