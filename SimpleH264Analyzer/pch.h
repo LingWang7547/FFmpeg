@@ -9,11 +9,14 @@
 #ifndef PCH_H
 #define PCH_H
 
-// TODO: 添加要在此处预编译的标头
+// TODO:  在此处引用程序需要的其他头文件
 #include <string>
-#include "Global.h"
-#include "Configuration.h"
 #include <assert.h>
+#include <algorithm>
+
+#include "Configuration.h"
+#include "Global.h"
 #include "Utils.h"
+#include "ErrorInfo.h"
 
 #endif //PCH_H
