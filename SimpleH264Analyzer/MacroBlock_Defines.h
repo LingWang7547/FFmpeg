@@ -12,3 +12,4 @@
 // Quantization parameter range
 #define MIN_QP          0
 #define MAX_QP          51
+
